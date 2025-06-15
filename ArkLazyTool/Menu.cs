@@ -51,7 +51,7 @@ namespace ArkLazyTool
         {
             short userInput;
             //Console.Clear();
-            Console.WriteLine("Welcome to Ark Lazy Tool!");
+            Console.WriteLine("\n\n\n\t\tWelcome to Ark Lazy Tool!");
             Console.WriteLine("1. Start calculating baby max level");
             Console.WriteLine("2. Exit");
             userInput = UserInput();
@@ -67,7 +67,9 @@ namespace ArkLazyTool
             switch (choice)
             {
                 case 1: BabyCalculator.ReturnBabyMaxLevel();
-                        Console.ReadLine(); 
+                        Console.WriteLine("pls enter to continue");
+                        Console.ReadLine();
+                        ShowMainMenu();
                         break;
                 case 2: Console.WriteLine("EXITING...");
                         Environment.Exit(0); 
