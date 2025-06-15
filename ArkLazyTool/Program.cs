@@ -2,7 +2,9 @@
  * TODOS
  * 
  * ERROR HANDLING
- * DB
+ * 
+ * DB (sqlite)
+ * 
  * UI
  * 
  */
