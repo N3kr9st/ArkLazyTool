@@ -9,17 +9,48 @@ namespace ArkLazyTool
 {
     internal class Menu
     {
-        public static void ShowMainMenu()
+        private static short ShowMainMenu()
         {
-            Console.Clear();
+            //Console.Clear();
             Console.WriteLine("Welcome to Ark Lazy Tool!");
-            Console.WriteLine("1. Start Game");
-            Console.WriteLine("2. Settings");
-            Console.WriteLine("3. Exit");
+            Console.WriteLine("1. Start calculating baby max level");
+            Console.WriteLine("2. Exit");
             Console.Write("Please select an option: ");
-            
-            int choice = int.Parse(Console.ReadLine());
+
+            short choice = short.Parse(Console.ReadLine() ?? "0");
+
+            if (choice == 1)
+            {
+                return choice;
+            }else if (choice == 2)
+            {
+                return choice;
+            }
+            else
+            {
+                Console.WriteLine("INVALID INPUT!");
+                ShowMainMenu();
+            }
+
+            Console.WriteLine("WARUM BIN ICH HIER ?");
+            return choice;
+
+
+                
+
         }
-        
+        public static void ShowMenu()
+        {
+            int choice = ShowMainMenu();
+            Console.WriteLine(choice);
+            switch (choice)
+            {
+                case 1: Console.WriteLine("GOOD JOB ITS A 1!"); break;
+                case 2: Console.WriteLine("EXITING"); Environment.Exit(0); break;
+
+
+            }
+
+        }
     }
 }
