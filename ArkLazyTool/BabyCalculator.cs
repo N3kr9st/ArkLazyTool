@@ -18,7 +18,7 @@ namespace ArkLazyTool
         { 
             Console.WriteLine("How many Dinos are used?");
             int dinoCount = int.Parse(Console.ReadLine() ?? "0");
-            if (dinoCount is < 1 or > 9)
+            if (dinoCount is < 2 or > 8)
             {
                 Console.WriteLine("Not a valid input! Try again!");
                 HowManyDinos();
@@ -57,7 +57,7 @@ namespace ArkLazyTool
             int[] levels = new int[statNames.Length];
             for (int i = 0; i < dinoCount; i++)
             {
-                Console.WriteLine($"Dino Nr.: {i + 1}");
+                Console.WriteLine($"Dino Nr: {i + 1}");
                 for (int j = 0; j < levels.Length; j++)
                 {
                     int value = GetDinoValue(statNames[j]);
