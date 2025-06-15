@@ -8,7 +8,7 @@ namespace ArkLazyTool
 {
     internal class Dino
     {   
-        int hp,damage,speed,food,ox,weight,stamina,torpor;
+        int hp,damage,speed,food,ox,weight,stamina,torpor = 0;
         public Dino(int hp, int damage, int speed, int food, int ox, int weight, int stamina, int torpor)
         {
             this.hp = hp;
