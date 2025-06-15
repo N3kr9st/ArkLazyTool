@@ -1,9 +1,3 @@
 ﻿using ArkLazyTool;
 
-
-
-
-
-
-
 Menu.ShowMenu();
