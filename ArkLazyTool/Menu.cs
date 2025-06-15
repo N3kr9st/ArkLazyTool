@@ -10,35 +10,55 @@ namespace ArkLazyTool
 {
     internal class Menu
     {
-        private static short ShowMainMenu()
+        private static short UserInput()
         {
-            //Console.Clear();
-            Console.WriteLine("Welcome to Ark Lazy Tool!");
-            Console.WriteLine("1. Start calculating baby max level");
-            Console.WriteLine("2. Exit");
-            Console.Write("Please select an option: ");
-
-            short choice = short.Parse(Console.ReadLine() ?? "0");
+            string userInput;
+            short choice;
+            while (true)
+            {
+                Console.Write("Please select an option: ");
+                userInput = Console.ReadLine() ?? "0";
+                if (!short.TryParse(userInput, out choice))
+                {
+                    Console.WriteLine("Input is not an integer! Please try again.");
+                    continue;
+                }
+                if (choice == 0)
+                {
+                    Console.WriteLine("Wrong input pls try again!");
+                    continue;
+                }
+                if (choice is not 1 or 2)
+                {
+                    Console.WriteLine("pls choose only between 1 or 2");
+                    continue;
+                }
+                break;
+            }
 
             if (choice == 1)
             {
                 return choice;
-            }else if (choice == 2)
+            }
+            if (choice == 2)
             {
                 return choice;
             }
-            else
-            {
-                Console.WriteLine("INVALID INPUT!");
-                ShowMainMenu();
-            }
-
-            Console.WriteLine("WARUM BIN ICH HIER ?");
+            Console.WriteLine("Wie bin ich hier gelandet!");
             return choice;
+        }
+        private static short ShowMainMenu()
+        {
+            short userInput;
+            //Console.Clear();
+            Console.WriteLine("Welcome to Ark Lazy Tool!");
+            Console.WriteLine("1. Start calculating baby max level");
+            Console.WriteLine("2. Exit");
+            userInput = UserInput();
+            return userInput; 
 
-
-                
-
+            
+            
         }
         public static void ShowMenu()
         {
