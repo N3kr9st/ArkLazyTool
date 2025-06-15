@@ -9,17 +9,18 @@ namespace ArkLazyTool
     internal class Dino
     {   
         int hp,damage,speed,food,ox,weight,stamina,torpor = 0;
-        public Dino(int hp, int damage, int speed, int food, int ox, int weight, int stamina, int torpor)
+        public Dino(int[] values)
         {
-            this.hp = hp;
-            this.damage = damage;
-            this.speed = speed;
-            this.food = food;
-            this.ox = ox;
-            this.weight = weight;
-            this.stamina = stamina;
-            this.torpor = torpor;
+            this.hp = values[0];
+            this.damage = values[1];
+            this.speed = values[2];
+            this.food = values[3];
+            this.ox = values[4];
+            this.weight = values[5];
+            this.stamina = values[6];
+            this.torpor = values[7];
         }
+
         public int GetHp() { return hp; }
         public int GetDamage() { return damage; }
         public int GetSpeed() { return speed; }
