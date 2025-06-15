@@ -8,6 +8,7 @@ namespace ArkLazyTool
 {
     internal class Dino
     {   
+        public static String[] statNames = {"Hp","Damage","Speed","Food","Ox","Weight","Stamina","Torpor"};
         int hp,damage,speed,food,ox,weight,stamina,torpor = 0;
         public Dino(int[] values)
         {

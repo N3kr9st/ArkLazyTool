@@ -6,7 +6,7 @@ namespace ArkLazyTool
 {
     internal class BabyCalculator
     {      
-        static String[] statNames = {"hp","damage","speed","food","ox","weight","stamina","topor"};        
+        static String[] statNames = Dino.statNames;        
         static int[] maxLevels = new int[statNames.Length];
         const int BABY_START_LEVEL = 1;
         static int babyMaxLevel = 0;
@@ -15,9 +15,10 @@ namespace ArkLazyTool
         
         static int HowManyDinos()
         {
+ 
             Console.WriteLine("How many Dinos are used?");
             int dinoCount = int.Parse(Console.ReadLine() ?? "0");
-            if (dinoCount is <= 2 or >= 8)
+            if (dinoCount is < 1 or > 9)
             {
                 Console.WriteLine("Not a valid input! Try again!");
                 HowManyDinos();
@@ -28,7 +29,7 @@ namespace ArkLazyTool
 
         static int GetDinoValue(String valueName)
         {
-            Console.WriteLine($"Pls give the Value of ", valueName);
+            Console.WriteLine($"Pls give the Value of {valueName} ");
             int value = int.Parse((Console.ReadLine() ?? "0"));
             return value;
         }
@@ -39,9 +40,11 @@ namespace ArkLazyTool
             int[] levels = new int[statNames.Length];
             for (int i = 0; i < dinoCount; i++)
             {
+                Console.WriteLine($"Dino Nr.: {i + 1}");
                 for (int j = 0; j < levels.Length; j++)
                 {
-                    levels[j] = GetDinoValue(statNames[j]);
+                    int value = GetDinoValue(statNames[j]);
+                    levels[j] = value;
                 }
                 dinos[i] = new Dino(levels);
 
@@ -51,35 +54,66 @@ namespace ArkLazyTool
         }
 
         static int CalcMaxBabyLevel(Dino[] dinos)
-        {   
+        {
 
             for (int i = 0; i < dinos.Length; i++)
             {
                 Dino dino = dinos[i];
+                
+
                 for (int j = 0; j < statNames.Length; j++)
                 {
-                    string statName = statNames[j];
-                    
-                    // Holt per Reflection die PropertyInfo für das aktuelle Stat (z.B. "hp") aus der Dino-Klasse.
-                    // Anschließend wird der Wert dieser Eigenschaft für das aktuelle Dino-Objekt ausgelesen
-                    // und in einen int umgewandelt.
-                    PropertyInfo property = dino.GetType().GetProperty(statName);
-                    int value = (int)property.GetValue(dino);
-                    
-                    if (maxLevels[j] < value)
+                    int statValue = 0;
+                    switch (statNames[j].ToLower())
                     {
-                        maxLevels[j] = value;
+                        case "hp":
+                            statValue = dino.GetHp();
+                            break;
+                        case "damage":
+                            statValue = dino.GetDamage();
+                            break;
+                        case "speed":
+                            statValue = dino.GetSpeed();
+                            break;
+                        case "food":
+                            statValue = dino.GetFood();
+                            break;
+                        case "ox":
+                            statValue = dino.GetOx();
+                            break;
+                        case "weight":
+                            statValue = dino.GetWeight();
+                            break;
+                        case "stamina":
+                            statValue = dino.GetStamina();
+                            break;
+                        case "torpor":
+                            statValue = dino.GetTorpor();
+                            break;
                     }
-
+                    if (statValue > maxLevels[j])
+                    {
+                        maxLevels[j] = statValue;
+                    }
+                    
                 }
             }
-            foreach(int i in maxLevels)
+            Console.Clear();
+            for(int i = 0; i < maxLevels.Length; i++)
             {
+
+                Console.WriteLine($"Max Value of {statNames[i]} is: {maxLevels[i]}");
                 babyMaxLevel += maxLevels[i];
             }
+
             return BABY_START_LEVEL + babyMaxLevel;
 
+        }
 
+        public static void ReturnBabyMaxLevel()
+        {
+            int level = CalcMaxBabyLevel(CreateDinoArray(HowManyDinos()));
+            Console.WriteLine($"Baby Max Level is: {level}");
         }
 
     }

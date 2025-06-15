@@ -1,3 +1,18 @@
-﻿using ArkLazyTool;
+﻿/**
+ * TODOS
+ * 
+ * ERROR HANDLING
+ * DB
+ * UI
+ * 
+ */
 
-Menu.ShowMenu();
+using ArkLazyTool;
+
+internal class Program
+{
+    private static void Main(string[] args)
+    {
+        Menu.ShowMenu();
+    }
+}

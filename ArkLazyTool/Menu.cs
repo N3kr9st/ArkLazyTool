@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using ArkLazyTool;
 
 namespace ArkLazyTool
 {
@@ -45,8 +46,12 @@ namespace ArkLazyTool
             Console.WriteLine(choice);
             switch (choice)
             {
-                case 1: Console.WriteLine("GOOD JOB ITS A 1!"); break;
-                case 2: Console.WriteLine("EXITING"); Environment.Exit(0); break;
+                case 1: BabyCalculator.ReturnBabyMaxLevel();
+                        Console.ReadLine(); 
+                        break;
+                case 2: Console.WriteLine("EXITING...");
+                        Environment.Exit(0); 
+                        break;
 
 
             }
