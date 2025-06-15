@@ -5,9 +5,7 @@ using System.Reflection;
 namespace ArkLazyTool
 {
     internal class BabyCalculator
-    {
-        static int dinoCount = HowManyDinos();
-        static Dino[] dinos = new Dino[dinoCount];        
+    {      
         static String[] statNames = {"hp","damage","speed","food","ox","weight","stamina","topor"};        
         static int[] maxLevels = new int[statNames.Length];
         const int BABY_START_LEVEL = 1;
@@ -15,9 +13,8 @@ namespace ArkLazyTool
 
         
         
-        static int HowManyDinos()
+        static Dino[] HowManyDinos()
         {
-     
             Console.WriteLine("How many Dinos are used?");
             int dinoCount = int.Parse(Console.ReadLine() ?? "0");
             if (dinoCount is <= 2 or >= 8)
@@ -25,32 +22,15 @@ namespace ArkLazyTool
                 Console.WriteLine("Not a valid input! Try again!");
                 HowManyDinos();
             }
-            else
-            {
-                Console.WriteLine(dinoCount);
-                return dinoCount;
-            }
-            return dinoCount;
+
+            return  new Dino[dinoCount]; ;
         }
 
-        static void CreateDinoArray()
-        {
-            for (int i = 0; i < dinoCount; i++)
-            {   
-                int[] levels = new int[statNames.Length];
-                for (int j = 0; j < statNames.Length; j++) {
-                    
-                    Console.WriteLine($"Pls give the Value of {statNames[j]}");
-                    levels[j] = int.Parse(Console.ReadLine() ?? "0");
+    
 
-                }
-                dinos[i] = new Dino(levels);
-            }
+        static int CalcMaxBabyLevel(Dino[] dinos)
+        {   
 
-        }
-
-        static int CalcMaxBabyLevel()
-        {
             for (int i = 0; i < dinos.Length; i++)
             {
                 Dino dino = dinos[i];
