@@ -75,7 +75,7 @@ namespace ArkLazyTool
             {
                 babyMaxLevel += maxLevels[i];
             }
-            return babyMaxLevel;
+            return BABY_START_LEVEL + babyMaxLevel;
 
 
         }
