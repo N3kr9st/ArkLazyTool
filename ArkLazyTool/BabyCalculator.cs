@@ -30,7 +30,7 @@ namespace ArkLazyTool
 
             while (true)
             {
-                Console.WriteLine($"Pls give the Value of {valueName} ");
+                Console.WriteLine($"Pls give the Level of {valueName} ");
                 userInput = Console.ReadLine() ?? "0";
                 if (!int.TryParse(userInput, out value))
                 {
@@ -116,7 +116,7 @@ namespace ArkLazyTool
             for(int i = 0; i < maxLevels.Length; i++)
             {
 
-                Console.WriteLine($"Max Value of {statNames[i]} is: {maxLevels[i]}");
+                Console.WriteLine($"Max Level of {statNames[i]} is: {maxLevels[i]}");
                 babyMaxLevel += maxLevels[i];
             }
 
