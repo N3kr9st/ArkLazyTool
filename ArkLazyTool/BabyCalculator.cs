@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.Design;
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
+using System.Reflection.Metadata.Ecma335;
 
 namespace ArkLazyTool
 {
@@ -14,8 +15,7 @@ namespace ArkLazyTool
         
         
         static int HowManyDinos()
-        {
- 
+        { 
             Console.WriteLine("How many Dinos are used?");
             int dinoCount = int.Parse(Console.ReadLine() ?? "0");
             if (dinoCount is < 1 or > 9)
@@ -29,8 +29,25 @@ namespace ArkLazyTool
 
         static int GetDinoValue(String valueName)
         {
-            Console.WriteLine($"Pls give the Value of {valueName} ");
-            int value = int.Parse((Console.ReadLine() ?? "0"));
+            int value;
+            string userInput;
+
+            while (true)
+            {
+                Console.WriteLine($"Pls give the Value of {valueName} ");
+                userInput = Console.ReadLine() ?? "0";
+                if (!int.TryParse(userInput, out value))
+                {
+                    Console.WriteLine("Input is not an integer! Please try again.");
+                    continue;
+                }
+                if (value == 0)
+                {
+                    Console.WriteLine("Wrong input pls try again!");
+                    continue;
+                }
+                break;
+            }
             return value;
         }
 
@@ -44,6 +61,7 @@ namespace ArkLazyTool
                 for (int j = 0; j < levels.Length; j++)
                 {
                     int value = GetDinoValue(statNames[j]);
+
                     levels[j] = value;
                 }
                 dinos[i] = new Dino(levels);
@@ -112,8 +130,10 @@ namespace ArkLazyTool
 
         public static void ReturnBabyMaxLevel()
         {
-            int level = CalcMaxBabyLevel(CreateDinoArray(HowManyDinos()));
-            Console.WriteLine($"Baby Max Level is: {level}");
+            int dinoCount = HowManyDinos();
+            Dino[] dinos = CreateDinoArray(dinoCount);
+            int level = CalcMaxBabyLevel(dinos);
+            Console.WriteLine($"\nBaby Max Level is: {level}");
         }
 
     }
