@@ -13,7 +13,7 @@ namespace ArkLazyTool
 
         
         
-        static Dino[] HowManyDinos()
+        static int HowManyDinos()
         {
             Console.WriteLine("How many Dinos are used?");
             int dinoCount = int.Parse(Console.ReadLine() ?? "0");
@@ -23,10 +23,32 @@ namespace ArkLazyTool
                 HowManyDinos();
             }
 
-            return  new Dino[dinoCount]; ;
+            return dinoCount ;
         }
 
-    
+        static int GetDinoValue(String valueName)
+        {
+            Console.WriteLine($"Pls give the Value of ", valueName);
+            int value = int.Parse((Console.ReadLine() ?? "0"));
+            return value;
+        }
+
+        static Dino[] CreateDinoArray(int dinoCount)
+        {
+            Dino[] dinos = new Dino[dinoCount];
+            int[] levels = new int[statNames.Length];
+            for (int i = 0; i < dinoCount; i++)
+            {
+                for (int j = 0; j < levels.Length; j++)
+                {
+                    levels[j] = GetDinoValue(statNames[j]);
+                }
+                dinos[i] = new Dino(levels);
+
+            }
+            return dinos;
+
+        }
 
         static int CalcMaxBabyLevel(Dino[] dinos)
         {   
