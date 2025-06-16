@@ -8,8 +8,6 @@ namespace ArkLazyTool
         const int BABY_START_LEVEL = 1;
         static int babyMaxLevel = 0;
 
-        
-        
         static int HowManyDinos()
         { 
             Console.WriteLine("How many Dinos are used?");
@@ -46,7 +44,6 @@ namespace ArkLazyTool
             }
             return value;
         }
-
         static Dino[] CreateDinoArray(int dinoCount)
         {
             Dino[] dinos = new Dino[dinoCount];
@@ -61,19 +58,16 @@ namespace ArkLazyTool
                     levels[j] = value;
                 }
                 dinos[i] = new Dino(levels);
-
             }
             return dinos;
 
         }
-
         static int CalcMaxBabyLevel(Dino[] dinos)
         {
 
             for (int i = 0; i < dinos.Length; i++)
             {
-                Dino dino = dinos[i];
-                
+                Dino dino = dinos[i];                
 
                 for (int j = 0; j < statNames.Length; j++)
                 {
@@ -108,8 +102,7 @@ namespace ArkLazyTool
                     if (statValue > maxLevels[j])
                     {
                         maxLevels[j] = statValue;
-                    }
-                    
+                    }                    
                 }
             }
             Console.Clear();
@@ -123,7 +116,6 @@ namespace ArkLazyTool
             return BABY_START_LEVEL + babyMaxLevel;
 
         }
-
         public static void ReturnBabyMaxLevel()
         {
             int dinoCount = HowManyDinos();
@@ -131,6 +123,5 @@ namespace ArkLazyTool
             int level = CalcMaxBabyLevel(dinos);
             Console.WriteLine($"\nBaby Max Level is: {level}");
         }
-
     }
 }
