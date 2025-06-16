@@ -1,6 +1,6 @@
 # ArkLazyTool
 
-**ArkLazyTool** ist ein praktisches Tool zur Vereinfachung für den ambitionierten Züchter der schnell das max Level wissen möchte.
+**ArkLazyTool** ist ein praktisches Tool für den ambitionierten Züchter der schnell das max Level seiner zukünftigen Babys wissen möchte.
 
 ## Voraussetzungen
 
