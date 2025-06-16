@@ -7,7 +7,7 @@
 
 ## Lizenz
 
-Dieses Projekt steht unter der **MIT-Lizenz**. Siehe [LICENSE](LICENSE) für weitere Informationen.
+Dieses Projekt steht unter der **MIT-Lizenz**. Siehe [LICENSE](LICENSE.txt) für weitere Informationen.
 
 ## Mitwirken
 
