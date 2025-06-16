@@ -1,5 +1,7 @@
 # ArkLazyTool
 
+**ArkLazyTool** ist ein praktisches Tool zur Vereinfachung für den ambitionierten Züchter der schnell das max Level wissen möchte.
+
 ## Voraussetzungen
 
 - **Windows-Betriebssystem**
@@ -7,7 +9,7 @@
 
 ## Lizenz
 
-Dieses Projekt steht unter der **MIT-Lizenz**. Siehe [LICENSE](LICENSE.txt) für weitere Informationen.
+Dieses Projekt steht unter der **GNU Affero General Public**. Siehe [LICENSE](LICENSE.txt) für weitere Informationen.
 
 ## Mitwirken
 
