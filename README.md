@@ -1,6 +1,6 @@
 # ArkLazyTool
 
-**ArkLazyTool** ist ein praktisches Tool für den ambitionierten Züchter der schnell das max Level seiner zukünftigen Babys wissen möchte.
+**ArkLazyTool** ist ein praktisches Tool für die Kommandozeile für den ambitionierten Züchter der schnell das max Level seiner zukünftigen Babys wissen möchte.
 
 ## Voraussetzungen
 
@@ -19,3 +19,9 @@ Wenn du Vorschläge, Fehlerberichte oder Pull Requests hast, freue ich mich übe
 ## Kontakt
 
 Du kannst mich direkt über GitHub kontaktieren oder ein Issue erstellen, falls du Fragen oder Probleme hast.
+
+## TODOS
+
+- lokale Datenbank
+- GUI
+
