@@ -5,7 +5,7 @@
 ## Voraussetzungen
 
 - **Windows-Betriebssystem**
-- .NET Framework 4.8 (oder neuer)  
+- .NET Framework 8.0 (oder neuer)  
 
 ## Lizenz
 
