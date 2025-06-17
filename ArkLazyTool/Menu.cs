@@ -28,7 +28,7 @@ namespace ArkLazyTool
                     Console.WriteLine("Wrong input pls try again!");
                     continue;
                 }
-                if (choice is not 1 or 2)
+                if (choice != 1 && choice != 2)
                 {
                     Console.WriteLine("pls choose only between 1 or 2");
                     continue;
@@ -62,20 +62,28 @@ namespace ArkLazyTool
         }
         public static void ShowMenu()
         {
-            int choice = ShowMainMenu();
-            Console.WriteLine(choice);
-            switch (choice)
+            while (true)
             {
-                case 1: BabyCalculator.ReturnBabyMaxLevel();
+                short choice = ShowMainMenu();
+                Console.WriteLine(choice);
+
+                switch (choice)
+                {
+                    case 1:
+                        BabyCalculator.ReturnBabyMaxLevel();
                         Console.WriteLine("pls enter to continue");
                         Console.ReadLine();
-                        ShowMainMenu();
-                        break;
-                case 2: Console.WriteLine("EXITING...");
-                        Environment.Exit(0); 
                         break;
 
+                    case 2:
+                        Console.WriteLine("EXITING...");
+                        Environment.Exit(0);
+                        break;
 
+                    default:
+                        Console.WriteLine("Invalid choice. Please try again.");
+                        break;
+                }
             }
 
         }
