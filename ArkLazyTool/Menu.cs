@@ -45,6 +45,10 @@ namespace ArkLazyTool
             {
                 return choice;
             }
+            if (choice == 3)
+            {
+                return choice;
+            }   
             Console.WriteLine("Wie bin ich hier gelandet!");
             return choice;
         }
